@@ -6,7 +6,7 @@
     "note": "Deploys a Spark cluster running Spark 2.1 with Tensorflow and Keras enabled.",
     "categories": ["serverless"],
     "platform": "linux",
-    "logo": "https://github.com/dx-xp-team/portainer-template/raw/master/XpCluster.png",
+    "logo": "https://github.com/dx-xp-team/portainer-templates/raw/master/XpCluster.png",
     "env": [
     {
       "name": "INSTANCE_ID",
