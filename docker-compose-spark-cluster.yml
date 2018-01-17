@@ -2,7 +2,7 @@ version: "3"
 services:
 
   spark-master:
-    image: dx-xp-team/xpspark
+    image: dxxpteam/xpspark
     hostname: spark-master
     command: bin/spark-class org.apache.spark.deploy.master.Master -h spark-master
     environment:
@@ -17,7 +17,7 @@ services:
           memory: 1G
 
   spark-worker:
-    image: dx-xp-team/xpspark
+    image: dxxpteam/xpspark
     hostname: spark-worker
     command: bin/spark-class org.apache.spark.deploy.worker.Worker spark://spark-master:7077
     environment:
@@ -36,7 +36,7 @@ services:
       - /mnt/data:/mnt/data
 
   zeppelin:
-    image: dx-xp-team/xpzeppelin
+    image: dxxpteam/xpzeppelin
     hostname: zeppelin
     ports :
       - "${INSTANCE_ID}080:8080"
