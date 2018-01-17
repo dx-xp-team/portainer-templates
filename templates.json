@@ -12,14 +12,6 @@
       "name": "INSTANCE_ID",
       "label": "Cluster Id",
       "description": "Cluster Instance id (1, 2, ...)."
-    },
-    {
-      "name": "SPARK_IMAGE",
-      "set": "manager.localdomain:5000/spark:2.2.0-test1"
-    },
-    {
-      "name": "ZEPPELIN_IMAGE",
-      "set": "manager.localdomain:5000/spark_zeppelin:2.2.0_0.7.3-test1"
     }
   ],
     "repository": {
