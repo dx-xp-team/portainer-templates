@@ -35,7 +35,7 @@
     }
   ],
     "repository": {
-      "url": "https://github.com/dx-xp-team/portainer-templates/bokeh",
+      "url": "https://github.com/dx-xp-team/portainer-templates/blob/bokeh",
       "stackfile": "docker-compose-spark-cluster.yml"
     }
   }
