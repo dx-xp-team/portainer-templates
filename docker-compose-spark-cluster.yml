@@ -51,6 +51,7 @@ services:
       - https_proxy=http://proxy.lbs.alcatel-lucent.com:8000
       - PYTHONPATH=/mnt/data/lib:/
       - TZ=Europe/Brussels
+      - ZEPPELIN_MEM=-Xmx2048m -XX:MaxPermSize=1024m
     command: bin/zeppelin.sh
     volumes:
       - /mnt/data:/mnt/data
