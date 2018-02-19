@@ -18,25 +18,5 @@
       "url": "https://github.com/dx-xp-team/portainer-templates",
       "stackfile": "docker-compose-spark-cluster.yml"
     }
-  },
-    {
-    "type": "stack",
-    "title": "SparkCluster with Bokeh",
-    "description": "Spark cluster with Zeppelin Notebook editor having Bokeh support",
-    "note": "Deploys a Spark cluster running Spark 2.1 with Tensorflow and Keras enabled. To use Bokeh in Zeppelin Notebooks, just add import bkzep and output_notebook(notebook_type='zeppelin')",
-    "categories": ["serverless"],
-    "platform": "linux",
-    "logo": "https://github.com/dx-xp-team/portainer-templates/raw/master/XpClusterBokeh.png",
-    "env": [
-    {
-      "name": "INSTANCE_ID",
-      "label": "Cluster Id",
-      "description": "Cluster Instance id (1, 2, ...)."
-    }
-  ],
-    "repository": {
-      "url": "https://github.com/dx-xp-team/portainer-templates/blob/bokeh",
-      "stackfile": "docker-compose-spark-cluster.yml"
-    }
   }
 ]
