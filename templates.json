@@ -2,8 +2,8 @@
   {
     "type": "stack",
     "title": "SparkCluster",
-    "description": "Spark cluster with Zeppelin Notebook editor",
-    "note": "Deploys a Spark cluster running Spark 2.1 with Tensorflow and Keras enabled.",
+    "description": "Spark 2.2 cluster with Zeppelin 0.7.3 Notebook editor",
+    "note": "Deploys a Spark cluster running Spark 2.2 with Tensorflow and Keras enabled together with Zeppelin 0.7.3.",
     "categories": ["serverless"],
     "platform": "linux",
     "logo": "https://github.com/dx-xp-team/portainer-templates/raw/master/XpCluster.png",
