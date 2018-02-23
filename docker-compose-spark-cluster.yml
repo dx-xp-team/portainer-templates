@@ -23,7 +23,7 @@ services:
     environment:
       SPARK_WORKER_CORES: 8
       SPARK_WORKER_MEMORY: 20g
-      PYTHONPATH: /mnt/data/lib
+      PYTHONPATH: /mnt/data/shared/lib
       TZ: Europe/Brussels
     deploy:
       replicas: 1
@@ -49,7 +49,7 @@ services:
       - HTTPS_PROXY=http://proxy.lbs.alcatel-lucent.com:8000
       - http_proxy=http://proxy.lbs.alcatel-lucent.com:8000
       - https_proxy=http://proxy.lbs.alcatel-lucent.com:8000
-      - PYTHONPATH=/mnt/data/lib:/
+      - PYTHONPATH=/mnt/data/shared/lib:/
       - TZ=Europe/Brussels
       - ZEPPELIN_MEM=-Xmx2048m -XX:MaxPermSize=1024m
     command: bin/zeppelin.sh
