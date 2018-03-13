@@ -1,0 +1,64 @@
+version: "3"
+services:
+
+  spark-master:
+    image: dxxpteam/xpspark:2.2
+    hostname: spark-master
+    command: bin/spark-class org.apache.spark.deploy.master.Master -h spark-master
+    environment:
+      TZ: Europe/Brussels
+    ports:
+      - ${INSTANCE_ID}081:8080
+    deploy:
+      resources:
+        limits:
+          memory: 1G
+        reservations:
+          memory: 1G
+
+  spark-worker:
+    image: dxxpteam/xpspark:2.2
+    hostname: spark-worker
+    command: bin/spark-class org.apache.spark.deploy.worker.Worker spark://spark-master:7077
+    environment:
+      SPARK_WORKER_CORES: 8
+      SPARK_WORKER_MEMORY: 20g
+      PYTHONPATH: /mnt/data/shared/lib
+      TZ: Europe/Brussels
+    deploy:
+      replicas: 1
+      resources:
+        limits:
+          memory: 20g
+        reservations:
+          memory: 20g
+    volumes:
+      - /mnt/data:/mnt/data
+
+  zeppelin:
+    image: dxxpteam/xpzeppelin:0.7.3-2.2
+    hostname: zeppelin
+    ports :
+      - "${INSTANCE_ID}080:8080"
+    environment:
+      - SPARK_HOME=/opt/spark
+      - MASTER=spark://spark-master:7077
+      - ZEPPELIN_JAVA_OPTS=-Dspark.executor.memory=20g
+      - ZEPPELIN_NOTEBOOK_DIR=/opt/NotebookRepo
+      - HTTP_PROXY=http://proxy.lbs.alcatel-lucent.com:8000
+      - HTTPS_PROXY=http://proxy.lbs.alcatel-lucent.com:8000
+      - http_proxy=http://proxy.lbs.alcatel-lucent.com:8000
+      - https_proxy=http://proxy.lbs.alcatel-lucent.com:8000
+      - PYTHONPATH=/mnt/data/shared/lib:/
+      - TZ=Europe/Brussels
+      - ZEPPELIN_MEM=-Xmx2048m -XX:MaxPermSize=1024m
+    command: bin/zeppelin.sh
+    volumes:
+      - /mnt/data:/mnt/data
+      - /mnt/NotebookRepo:/opt/NotebookRepo
+    deploy:
+      resources:
+        limits:
+          memory: 4G
+        reservations:
+          memory: 4G
