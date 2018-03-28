@@ -18,25 +18,5 @@
       "url": "https://github.com/dx-xp-team/portainer-templates",
       "stackfile": "docker-compose-spark-cluster-0.7.3-2.2.yml"
     }
-  },
-    {
-    "type": "stack",
-    "title": "SparkCluster",
-    "description": "Spark 2.3 cluster with Zeppelin 0.7.3 Notebook editor",
-    "note": "Deploys a Spark cluster running Spark 2.3 with Tensorflow and Keras enabled together with Zeppelin 0.7.3.",
-    "categories": ["serverless"],
-    "platform": "linux",
-    "logo": "https://github.com/dx-xp-team/portainer-templates/raw/master/XpCluster.png",
-    "env": [
-    {
-      "name": "INSTANCE_ID",
-      "label": "Cluster Id",
-      "description": "Cluster Instance id (1, 2, ...)."
-    }
-  ],
-    "repository": {
-      "url": "https://github.com/dx-xp-team/portainer-templates",
-      "stackfile": "docker-compose-spark-cluster.yml"
-    }
   }
 ]
