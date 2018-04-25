@@ -45,7 +45,7 @@ services:
     environment:
       http_proxy: http://proxy.lbs.alcatel-lucent.com:8000
       https_proxy: http://proxy.lbs.alcatel-lucent.com:8000
-      SPARK_LOCAL_IP: jupyter-master
+      SPARK_LOCAL_IP: jupyter
       PYSPARK_SUBMIT_ARGS: --jars /root/pixiedust/bin/cloudant-spark-v2.0.0-185.jar --driver-class-path /root/pixiedust/data/libs/* --master spark://spark-master:7077 --name "jupyter" --executor-memory 20G pyspark-shell
       SPARK_DRIVER_MEMORY: 4G
       TZ: Europe/Brussels
