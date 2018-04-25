@@ -21,8 +21,8 @@
   },
     {
     "type": "stack",
-    "title": "SparkCluster 2.3 - Jupyter 5.4.0",
-    "description": "Spark 2.3 cluster with Jupyter 5.4.0 Notebook editor for python 3.6.4",
+    "title": "SparkCluster 2.3 - Jupyter 5.4.0 - Python 3.6.4",
+    "description": "Spark 2.3 cluster with Jupyter 5.4.0 Notebook editor for Python 3.6.4",
     "note": "Deploys a Spark cluster running Spark 2.3 with Python 3.6.4, Tensorflow and Keras enabled together with Jupyter 5.4.0 and PixieDust 1.1.9",
     "categories": ["serverless"],
     "platform": "linux",
