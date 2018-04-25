@@ -1,0 +1,59 @@
+version: "3"
+services:
+
+  spark-master:
+    image: dxxpteam/xpspark:2.3p3.6.4
+    hostname: spark-master
+    command: bin/spark-class org.apache.spark.deploy.master.Master -h spark-master
+    environment:
+      TZ: Europe/Brussels
+    ports:
+      - ${INSTANCE_ID}081:8080
+    deploy:
+      resources:
+        limits:
+          memory: 1G
+        reservations:
+          memory: 1G
+
+  spark-worker:
+    image: dxxpteam/xpspark:2.3p3.6.4
+    hostname: spark-worker
+    command: bin/spark-class org.apache.spark.deploy.worker.Worker spark://spark-master:7077
+    environment:
+      SPARK_WORKER_CORES: 8
+      SPARK_WORKER_MEMORY: 20g
+      PYTHONPATH: /mnt/data/shared/lib
+      TZ: Europe/Brussels
+      PYSPARK_PYTHON: python3.6
+    deploy:
+      replicas: 1
+      resources:
+        limits:
+          memory: 20g
+        reservations:
+          memory: 20g
+    volumes:
+      - /mnt/data:/mnt/data
+
+  jupyter:
+    image: dxxpteam/xpjupyter:spark-2.3
+    hostname: jupyter
+    command: jupyter notebook --debug --no-browser --ip=0.0.0.0 --notebook-dir=/mnt/jupiterNotebookRepo --allow-root
+    ports :
+      - "${INSTANCE_ID}888:8888"
+    environment:
+      http_proxy: http://proxy.lbs.alcatel-lucent.com:8000
+      https_proxy: http://proxy.lbs.alcatel-lucent.com:8000
+      SPARK_LOCAL_IP: jupyter-master
+      PYSPARK_SUBMIT_ARGS: --jars /root/pixiedust/bin/cloudant-spark-v2.0.0-185.jar --driver-class-path /root/pixiedust/data/libs/* --master spark://spark-master:7077 --name "jupyter" --executor-memory 20G pyspark-shell
+      SPARK_DRIVER_MEMORY: 4G
+      TZ: Europe/Brussels
+    volumes:
+      - /mnt:/mnt
+    deploy:
+      resources:
+        limits:
+          memory: 4G
+        reservations:
+          memory: 4G
