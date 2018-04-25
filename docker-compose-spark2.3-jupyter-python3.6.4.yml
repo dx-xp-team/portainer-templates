@@ -39,7 +39,7 @@ services:
   jupyter:
     image: dxxpteam/xpjupyter:spark-2.3
     hostname: jupyter
-    command: jupyter notebook --debug --no-browser --ip=0.0.0.0 --notebook-dir=/mnt/jupiterNotebookRepo --allow-root
+    command: jupyter notebook --debug --no-browser --ip=0.0.0.0 --notebook-dir=/mnt/jupyterNotebookRepo --allow-root
     ports :
       - "${INSTANCE_ID}888:8888"
     environment:
