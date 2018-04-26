@@ -7,7 +7,6 @@ services:
     command: bin/spark-class org.apache.spark.deploy.master.Master -h spark-master
     environment:
       TZ: Europe/Brussels
-      PYSPARK_PYTHON: python3.6
     ports:
       - ${INSTANCE_ID}08${INSTANCE_ID}:8080
     deploy:
@@ -27,6 +26,7 @@ services:
       PYTHONPATH: /mnt/data/shared/lib
       TZ: Europe/Brussels
       PYSPARK_PYTHON: python3.6
+      PYSPARK_DRIVER_PYTHON: python3.6
     deploy:
       replicas: 1
       resources:
