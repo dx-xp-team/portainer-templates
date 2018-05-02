@@ -2,7 +2,7 @@ version: "3"
 services:
 
   spark-master:
-    image: dxxpteam/xpspark:2.3p3.6.4
+    image: dxxpteam/xpjupyter:spark-2.3
     hostname: spark-master
     command: bin/spark-class org.apache.spark.deploy.master.Master -h spark-master
     environment:
@@ -17,7 +17,7 @@ services:
           memory: 1G
 
   spark-worker:
-    image: dxxpteam/xpspark:2.3p3.6.4
+    image: dxxpteam/xpjupyter:spark-2.3
     hostname: spark-worker
     command: bin/spark-class org.apache.spark.deploy.worker.Worker spark://spark-master:7077
     environment:
