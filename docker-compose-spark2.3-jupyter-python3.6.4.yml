@@ -8,7 +8,7 @@ services:
     environment:
       TZ: Europe/Brussels
     ports:
-      - ${INSTANCE_ID}08${INSTANCE_ID}:8080
+      - ${INSTANCE_ID}082:8080
     deploy:
       resources:
         limits:
