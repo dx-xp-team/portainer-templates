@@ -49,7 +49,8 @@ services:
       SPARK_DRIVER_MEMORY: 4G
       TZ: Europe/Brussels
     volumes:
-      - /mnt:/mnt
+      - /mnt/data:/mnt/data
+      - /mnt/jupyterNotebookRepo:/mnt/jupyterNotebookRepo
     deploy:
       resources:
         limits:
