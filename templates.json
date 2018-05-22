@@ -38,5 +38,25 @@
       "url": "https://github.com/dx-xp-team/portainer-templates",
       "stackfile": "docker-compose-spark2.3-jupyter-python3.6.4.yml"
     }
+  },
+    {
+    "type": "stack",
+    "title": "SparkCluster 2.3 - Zeppelin 0.8 (snapshot) - Python 2.6",
+    "description": "Spark 2.3 cluster with Zeppelin 0.8 compiled from sources Notebook editor with Python 2.6",
+    "note": "Deploys a Spark cluster running Spark 2.3 with Python 2.6, Tensorflow 1.7 and Keras enabled together with Zeppelin 0.8 (snapshot)",
+    "categories": ["serverless"],
+    "platform": "linux",
+    "logo": "https://github.com/dx-xp-team/portainer-templates/raw/master/XpClusterZep0.8.png",
+    "env": [
+    {
+      "name": "INSTANCE_ID",
+      "label": "Cluster Id",
+      "description": "Cluster Instance id (1, 2, ...)."
+    }
+  ],
+    "repository": {
+      "url": "https://github.com/dx-xp-team/portainer-templates",
+      "stackfile": "docker-compose-spark2.3-zeppelin0.8.yml"
+    }
   }
 ]
