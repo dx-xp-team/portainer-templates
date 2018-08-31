@@ -63,7 +63,7 @@
     "type": 2,
     "title": "SparkCluster 2.3 - Zeppelin 0.8 (snapshot) - Python 3.6 - LDAP",
     "description": "Spark 2.3 cluster with Zeppelin 0.8 compiled from sources with Python 3.6.4",
-    "note": "Deploys a Spark cluster running Spark 2.3 with Python 3.6, Tensorflow 1.7 and Keras enabled together with Zeppelin 0.8 (snapshot) configured with Nokia CSL authentication.",
+    "note": "Deploys a Spark cluster running Spark 2.3 with Python 3.6, Tensorflow 1.8 and Keras enabled together with Zeppelin 0.8 (snapshot) configured with Nokia CSL authentication.",
     "categories": ["serverless"],
     "platform": "linux",
     "logo": "https://github.com/dx-xp-team/portainer-templates/raw/master/XpClusterZep0.8.png",
