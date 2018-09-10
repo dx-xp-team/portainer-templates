@@ -56,6 +56,8 @@ services:
     volumes:
       - /mnt/data:/mnt/data
       - /mnt/NotebookRepo:/opt/NotebookRepo
+      - /mnt/zeppelinConfig/notebook-authorization.json:/opt/zeppelin/conf/notebook-authorization.json
+      - /mnt/zeppelinConfig/shiro.ini:/opt/zeppelin/conf/shiro.ini
     deploy:
       resources:
         limits:
