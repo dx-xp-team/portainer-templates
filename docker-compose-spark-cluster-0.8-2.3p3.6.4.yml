@@ -52,15 +52,19 @@ services:
       - PYTHONPATH=/mnt/data/shared/lib:/
       - TZ=Europe/Brussels
       - ZEPPELIN_MEM=-Xmx2048m -XX:MaxPermSize=1024m
-    command: bin/zeppelin.sh
+      - MLFLOW_TRACKING_URI=file:/opt/zeppelin/logs/mlruns
+    command: bin/zeppelin.sh;mlflow ui --host 0.0.0.0 --file-store ./logs/mlruns
     volumes:
       - /mnt/data:/mnt/data
       - /mnt/NotebookRepo:/opt/NotebookRepo
       - /mnt/zeppelinConfig/shiro.ini:/opt/zeppelin/conf/shiro.ini
       - /mnt/zeppelinConfig/notebook-authorization.json:/opt/zeppelin/conf/notebook-authorization.json
+      - /mnt/data/shared/mlruns/instance_id/${INSTANCE_ID}:/opt/zeppelin/logs/mlruns
     deploy:
       resources:
         limits:
           memory: 8G
         reservations:
           memory: 8G
+      placement:
+        constraints: [node.hostname == slave-${INSTANCE_ID}]
