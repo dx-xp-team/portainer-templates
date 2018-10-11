@@ -64,3 +64,5 @@ services:
           memory: 4G
         reservations:
           memory: 4G
+        placement:
+          constraints: ["node.hostname == slave-${INSTANCE_ID}"]
