@@ -68,4 +68,4 @@ services:
         reservations:
           memory: 8G
       placement:
-        constraint: [node.hostname == slave-5]
+        constraints: [node.hostname == slave-5]
