@@ -25,7 +25,7 @@ services:
       SPARK_WORKER_MEMORY: 20g
       PYTHONPATH: /mnt/data/shared/lib
       TZ: Europe/Brussels
-      MLFLOW_TRACKING_URI=file:/mnt/data/shared/mlruns/instance_id/${INSTANCE_ID}
+      MLFLOW_TRACKING_URI: file:/mnt/data/shared/mlruns/instance_id/${INSTANCE_ID}
     deploy:
       replicas: 1
       resources:
