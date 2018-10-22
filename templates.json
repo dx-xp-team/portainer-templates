@@ -63,7 +63,7 @@
     "type": 2,
     "title": "Jupyter Notebook Editor",
     "description": "Standalone Jupyter 5.5.0 Notebook editor for Python 3.6",
-    "note": "Deploys Jupyter Notebook editor with Python 3.6.5, Tensorflow 1.10.1 and Keras enabled.",
+    "note": "Deploys Jupyter Notebook editor with Python 3.6.5, Tensorflow 1.11.0 and Keras enabled.",
     "categories": ["serverless"],
     "platform": "linux",
     "logo": "https://github.com/dx-xp-team/portainer-templates/raw/master/Jupyter.png",
