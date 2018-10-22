@@ -17,8 +17,6 @@ services:
     deploy:
       resources:
         limits:
-          memory: 8G
+          memory: 20G
         reservations:
-          memory: 8G
-      placement:
-        constraints: ["node.hostname == slave-${INSTANCE_ID}"]
+          memory: 20G
