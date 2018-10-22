@@ -1,0 +1,24 @@
+version: "3"
+services:
+  jupyter:
+    image: dxxpteam/xpjupyter:standalone
+    hostname: jupyter
+    command: jupyter notebook --debug --no-browser --ip=0.0.0.0 --notebook-dir=/mnt/jupyterNotebookRepo --allow-root
+    ports :
+      - "${INSTANCE_ID}888:8888"
+      - "${INSTANCE_ID}050:5050"
+    environment:
+      http_proxy: http://proxy.lbs.alcatel-lucent.com:8000
+      https_proxy: http://proxy.lbs.alcatel-lucent.com:8000
+      TZ: Europe/Brussels
+    volumes:
+      - /mnt/data:/mnt/data
+      - /mnt/jupyterNotebookRepo:/mnt/jupyterNotebookRepo
+    deploy:
+      resources:
+        limits:
+          memory: 8G
+        reservations:
+          memory: 8G
+      placement:
+        constraints: ["node.hostname == slave-${INSTANCE_ID}"]
