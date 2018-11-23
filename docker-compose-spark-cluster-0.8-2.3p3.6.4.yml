@@ -55,7 +55,7 @@ services:
       - TZ=Europe/Brussels
       - ZEPPELIN_MEM=-Xmx2048m -XX:MaxPermSize=1024m
       - MLFLOW_TRACKING_URI=file:./logs/mlruns
-    command: bin/zeppelin.sh
+    command: /opt/zeppelin/bin/zeppelin.sh
     volumes:
       - /mnt/data:/mnt/data
       - /mnt/NotebookRepo:/opt/NotebookRepo
