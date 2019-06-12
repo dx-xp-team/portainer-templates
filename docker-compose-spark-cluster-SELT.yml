@@ -15,6 +15,20 @@ services:
           memory: 1G
         reservations:
           memory: 1G
+      placement:
+        constraints:
+          - node.role != manager
+          - node.hostname != slave-1
+          - node.hostname != slave-2
+          - node.hostname != slave-3
+          - node.hostname != slave-4
+          - node.hostname != slave-5
+          - node.hostname != slave-6
+          - node.hostname != slave-7
+          - node.hostname != slave-8
+          - node.hostname != slave-9
+          - node.hostname != slave-10
+          - node.hostname != slave-11          
 
   spark-worker:
     image: ana-docker-candidates.repo.lab.pl.alcatel-lucent.com/xp-spark:latest
@@ -84,4 +98,15 @@ services:
           memory: 8G
       placement:
         constraints:
-          - node.role == manager
+          - node.role != manager
+          - node.hostname != slave-1
+          - node.hostname != slave-2
+          - node.hostname != slave-3
+          - node.hostname != slave-4
+          - node.hostname != slave-5
+          - node.hostname != slave-6
+          - node.hostname != slave-7
+          - node.hostname != slave-8
+          - node.hostname != slave-9
+          - node.hostname != slave-10
+          - node.hostname != slave-11
