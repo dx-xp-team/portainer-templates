@@ -15,6 +15,16 @@ services:
           memory: 1G
         reservations:
           memory: 1G
+      placement:
+        constraints:
+          - node.hostname != slave-12
+          - node.hostname != slave-13
+          - node.hostname != slave-14
+          - node.hostname != slave-15
+          - node.hostname != slave-16
+          - node.hostname != slave-17
+          - node.hostname != slave-18
+          - node.hostname != slave-19
 
   spark-worker:
     image: dxxpteam/xpspark:2.3p3.6.4
@@ -32,6 +42,16 @@ services:
           memory: 20g
         reservations:
           memory: 20g
+      placement:
+        constraints:
+          - node.hostname != slave-12
+          - node.hostname != slave-13
+          - node.hostname != slave-14
+          - node.hostname != slave-15
+          - node.hostname != slave-16
+          - node.hostname != slave-17
+          - node.hostname != slave-18
+          - node.hostname != slave-19 
     volumes:
       - /mnt/data:/mnt/data
 
