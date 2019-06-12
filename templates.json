@@ -79,7 +79,6 @@
       "stackfile": "docker-compose-jupyter-standalone-python3.6.4.yml"
     }
   },
-,
     {
     "type": 2,
     "title": "Spark Cluster dedicated for SELT",
