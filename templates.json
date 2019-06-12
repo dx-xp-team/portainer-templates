@@ -95,7 +95,7 @@
   ],
     "repository": {
       "url": "https://github.com/dx-xp-team/portainer-templates",
-      "stackfile": "docker-compose-spark-cluster-SELT.yml"
+      "stackfile": "docker-compose-jupyter-standalone-python3.6.4.yml"
     }
   }   
 ]
