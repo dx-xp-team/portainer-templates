@@ -8,7 +8,7 @@ services:
     environment:
       TZ: Europe/Brussels
     ports:
-      - 11081:8080
+      - 12081:8080
     deploy:
       resources:
         limits:
@@ -68,8 +68,8 @@ services:
     image: ana-docker-candidates.repo.lab.pl.alcatel-lucent.com/xp-zeppelin:latest
     hostname: zeppelin
     ports :
-      - "11080:8080"
-      - "11082:5000"
+      - "12080:8080"
+      - "12082:5000"
     environment:
       - SPARK_HOME=/opt/spark
       - MASTER=spark://spark-master:7077
