@@ -89,9 +89,7 @@
     "logo": "https://github.com/dx-xp-team/portainer-templates/raw/master/XpClusterZep0.8.png",
     "env": [
     {
-      "name": "INSTANCE_ID",
-      "label": "Cluster Id",
-      "description": "Cluster Instance id (1, 2, ...)."
+      "name": "INSTANCE_ID"
     }
   ],
     "repository": {
