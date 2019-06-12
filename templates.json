@@ -86,7 +86,7 @@
     "note": "Deploys a Spark cluster running Spark 2.3.1 with Python 3.6.6, Tensorflow 1.13.1 and Keras enabled together with Zeppelin 0.8 (snapshot) configured with Nokia CSL authentication.",
     "categories": ["serverless"],
     "platform": "linux",
-    "logo": "https://github.com/dx-xp-team/portainer-templates/raw/master/XpCluster2.2.png",
+    "logo": "https://github.com/dx-xp-team/portainer-templates/raw/master/XpClusterZep0.8.png",
     "env": [
     {
       "name": "INSTANCE_ID",
@@ -96,7 +96,7 @@
   ],
     "repository": {
       "url": "https://github.com/dx-xp-team/portainer-templates",
-      "stackfile": "docker-compose-spark-cluster-0.7.3-2.2.yml"
+      "stackfile": "docker-compose-spark-cluster-SELT.yml"
     }
   }  
 ]
