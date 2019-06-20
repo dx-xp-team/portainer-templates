@@ -90,6 +90,7 @@ services:
       - /mnt/zeppelinConfig/shiro.ini:/opt/zeppelin/conf/shiro.ini
       - /mnt/zeppelinConfig/notebook-authorization.json:/opt/zeppelin/conf/notebook-authorization.json
       - /mnt/data/shared/mlruns/instance_id/${INSTANCE_ID}:/opt/zeppelin/logs/mlruns
+      - /mnt/zeppelinConfig/zeppelin-env.sh:/opt/zeppelin/conf/zeppelin-env.sh
     deploy:
       resources:
         limits:
