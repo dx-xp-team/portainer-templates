@@ -16,16 +16,8 @@ services:
         reservations:
           memory: 1G
       placement:
-        constraints:
-          - node.hostname != slave-12
-          - node.hostname != slave-13
-          - node.hostname != slave-14
-          - node.hostname != slave-15
-          - node.hostname != slave-16
-          - node.hostname != slave-17
-          - node.hostname != slave-18
-          - node.hostname != slave-19          
-
+        constraints: ["node.hostname == slave-${INSTANCE_ID}"]
+        
   spark-worker:
     image: ana-docker-candidates.repo.lab.pl.alcatel-lucent.com/xp-spark:latest
     hostname: spark-worker
@@ -82,6 +74,7 @@ services:
       - /mnt/zeppelinConfig/shiro.ini:/opt/zeppelin/conf/shiro.ini
       - /mnt/zeppelinConfig/notebook-authorization.json:/opt/zeppelin/conf/notebook-authorization.json
       - /mnt/data/shared/mlruns/instance_id/${INSTANCE_ID}:/opt/zeppelin/logs/mlruns
+      - /mnt/zeppelinConfig/zeppelin-env.sh:/opt/zeppelin/conf/zeppelin-env.sh
     deploy:
       resources:
         limits:
