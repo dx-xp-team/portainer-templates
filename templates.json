@@ -79,7 +79,7 @@
       "stackfile": "docker-compose-jupyter-standalone-python3.6.4.yml"
     }
   },
- {
+  {
     "type": 2,
     "title": "Spark Cluster dedicated for SELT",
     "description": "Spark 2.3 cluster with Zeppelin 0.8 compiled from sources with Python 3.6",
@@ -87,6 +87,13 @@
     "categories": ["serverless"],
     "platform": "linux",
     "logo": "https://github.com/dx-xp-team/portainer-templates/raw/master/XpClusterZep0.8.png",
+    "env": [
+    {
+      "name": "INSTANCE_ID",
+      "label": "Cluster Id",
+      "description": "Cluster Instance id (1, 2, ...)."
+    }
+   ],
     "repository": {
       "url": "https://github.com/dx-xp-team/portainer-templates",
       "stackfile": "docker-compose-spark-cluster-SELT.yml"
