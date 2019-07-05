@@ -59,10 +59,10 @@ services:
       - MASTER=spark://spark-master:7077
       - ZEPPELIN_JAVA_OPTS=-Dspark.executor.memory=20g
       - ZEPPELIN_NOTEBOOK_DIR=/opt/NotebookRepo
-      - HTTP_PROXY=http://10.158.100.1:8080/
-      - HTTPS_PROXY=https://10.158.100.1:8080/
-      - http_proxy=http://10.158.100.1:8080/
-      - https_proxy=https://10.158.100.1:8080/
+      - HTTP_PROXY=http://135.245.48.34:8000
+      - HTTPS_PROXY=https://135.245.48.34:8000
+      - http_proxy=http://135.245.48.34:8000
+      - https_proxy=https://135.245.48.34:8000
       - PYTHONPATH=/mnt/data/shared/lib:/
       - TZ=Europe/Brussels
       - ZEPPELIN_MEM=-Xmx4096m -XX:MaxPermSize=1024m
