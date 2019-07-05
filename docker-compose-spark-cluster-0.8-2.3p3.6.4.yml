@@ -59,10 +59,10 @@ services:
       - MASTER=spark://spark-master:7077
       - ZEPPELIN_JAVA_OPTS=-Dspark.executor.memory=20g
       - ZEPPELIN_NOTEBOOK_DIR=/opt/NotebookRepo
-      - HTTP_PROXY=http://fi-esp-tapdc-collabprx00.emea.nsn-net.net
-      - HTTPS_PROXY=https://fi-esp-tapdc-collabprx00.emea.nsn-net.net
-      - http_proxy=http://fi-esp-tapdc-collabprx00.emea.nsn-net.net
-      - https_proxy=https://fi-esp-tapdc-collabprx00.emea.nsn-net.net
+      - HTTP_PROXY=http://fi-esp-tapdc-collabprx00.emea.nsn-net.net:8080
+      - HTTPS_PROXY=https://fi-esp-tapdc-collabprx00.emea.nsn-net.net:8080
+      - http_proxy=http://fi-esp-tapdc-collabprx00.emea.nsn-net.net:8080
+      - https_proxy=https://fi-esp-tapdc-collabprx00.emea.nsn-net.net:8080
       - PYTHONPATH=/mnt/data/shared/lib:/
       - TZ=Europe/Brussels
       - ZEPPELIN_MEM=-Xmx4096m -XX:MaxPermSize=1024m
