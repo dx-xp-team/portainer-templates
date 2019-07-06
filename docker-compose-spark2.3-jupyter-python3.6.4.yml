@@ -63,8 +63,8 @@ services:
       - "${INSTANCE_ID}888:8888"
       - "${INSTANCE_ID}050:5050"
     environment:
-      http_proxy: http://10.158.100.1:8080/
-      https_proxy: http://10.158.100.1:8080/
+      http_proxy: http://135.245.48.34:8000
+      https_proxy: https://135.245.48.34:8000
       SPARK_LOCAL_IP: jupyter
       PYSPARK_SUBMIT_ARGS: --jars /root/pixiedust/bin/cloudant-spark-v2.0.0-185.jar --driver-class-path /root/pixiedust/data/libs/* --master spark://spark-master:7077 --name "jupyter" --executor-memory 20G pyspark-shell
       SPARK_DRIVER_MEMORY: 4G
