@@ -12,9 +12,9 @@ services:
     deploy:
       resources:
         limits:
-          memory: 0.5G
+          memory: 1G
         reservations:
-          memory: 0.5G
+          memory: 1G
       placement:
         constraints: ["node.hostname == slave-${INSTANCE_ID}"]
         
@@ -32,9 +32,9 @@ services:
       replicas: 1
       resources:
         limits:
-          memory: 20g
+          memory: 19.5g
         reservations:
-          memory: 20g
+          memory: 19.5g
       placement:
         constraints:
           - node.hostname != slave-12
