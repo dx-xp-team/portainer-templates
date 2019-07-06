@@ -39,9 +39,9 @@ services:
       replicas: 1
       resources:
         limits:
-          memory: 20g
+          memory: 19.5g
         reservations:
-          memory: 20g
+          memory: 19.5g
       placement:
         constraints:
           - node.hostname != slave-12
