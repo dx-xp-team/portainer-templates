@@ -54,6 +54,7 @@ services:
     ports :
       - "${INSTANCE_ID}080:8080"
       - "${INSTANCE_ID}082:5000"
+      - "${INSTANCE_ID}006:6006"
     environment:
       - SPARK_HOME=/opt/spark
       - MASTER=spark://spark-master:7077
