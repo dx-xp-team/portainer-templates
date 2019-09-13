@@ -9,7 +9,6 @@ services:
       TZ: Europe/Brussels
     ports:
       - ${INSTANCE_ID}081:8080
-      - $(INSTANCE_ID}006:6006
     deploy:
       resources:
         limits:
