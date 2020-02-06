@@ -37,6 +37,7 @@ services:
           memory: 19.5g
       placement:
         constraints:
+          - node.hostname != manager
           - node.hostname != slave-12
           - node.hostname != slave-13
           - node.hostname != slave-14
