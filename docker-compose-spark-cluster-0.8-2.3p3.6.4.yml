@@ -67,7 +67,7 @@ services:
       - https_proxy=https://135.245.48.34:8000
       - PYTHONPATH=/mnt/data/shared/lib:/
       - TZ=Europe/Brussels
-      - ZEPPELIN_MEM=-Xmx4096m -XX:MaxPermSize=1024m
+      - ZEPPELIN_MEM=-Xmx8192m -XX:MaxPermSize=1024m
       - MLFLOW_TRACKING_URI=file:./logs/mlruns
     command: /opt/zeppelin/bin/zeppelin.sh
     volumes:
@@ -80,7 +80,7 @@ services:
     deploy:
       resources:
         limits:
-          memory: 8G
+          memory: 16G
         reservations:
           memory: 8G
       placement:
