@@ -43,7 +43,7 @@
     "type": 2,
     "title": "SparkCluster 2.4.3 - Zeppelin 0.8.2 - Python 3.6 - TF 1.14.0 - xpcore 1.0.2",
     "description": "Spark 2.4.3 cluster with Zeppelin 0.8.2 (official) with Python 3.6.10",
-    "note": "Deploys a Spark cluster running Spark 2.4.3 with Python 3.6.10, Tensorflow 1.14.0 and Keras enabled together with Zeppelin 0.8.2 configured with Nokia CSL authentication.",
+    "note": "Full description available at: https://confluence.int.net.nokia.com/display/DSXP/App+Template+Versions#AppTemplateVersions-SparkCluster2.4.3-Zeppelin0.8.2-Python3.6-TF1.14.0-xpcore1.0.2",
     "categories": ["serverless"],
     "platform": "linux",
     "logo": "https://github.com/dx-xp-team/portainer-templates/raw/master/XpClusterZep0.8.png",
