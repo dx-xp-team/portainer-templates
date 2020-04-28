@@ -2,7 +2,7 @@ version: "3"
 services:
 
   spark-master:
-    image: ana-docker-candidates.repo.lab.pl.alcatel-lucent.com/xp-spark:tf2.1.0-xpcore_latest
+    image: ana-docker-candidates.repo.lab.pl.alcatel-lucent.com/xp-spark:tf2.1.0-xpcore_1.0.2.post202004212122
     hostname: spark-master
     command: /opt/spark/bin/spark-class org.apache.spark.deploy.master.Master -h spark-master
     environment:
@@ -19,7 +19,7 @@ services:
         constraints: ["node.hostname == slave-${INSTANCE_ID}"]
         
   spark-worker:
-    image: ana-docker-candidates.repo.lab.pl.alcatel-lucent.com/xp-spark:tf2.1.0-xpcore_latest
+    image: ana-docker-candidates.repo.lab.pl.alcatel-lucent.com/xp-spark:tf2.1.0-xpcore_1.0.2.post202004212122
     hostname: spark-worker
     command: /opt/spark/bin/spark-class org.apache.spark.deploy.worker.Worker spark://spark-master:7077
     environment:
