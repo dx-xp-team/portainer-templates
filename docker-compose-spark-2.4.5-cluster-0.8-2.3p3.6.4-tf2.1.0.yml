@@ -50,7 +50,7 @@ services:
       - /mnt/data:/mnt/data
 
   zeppelin:
-    image: ana-docker-candidates.repo.lab.pl.alcatel-lucent.com/xp-zeppelin:tf2.1.0-xpcore_1.0.2.post202004212122
+    image: ana-docker-candidates.repo.lab.pl.alcatel-lucent.com/xp-zeppelin:latest
     hostname: zeppelin
     ports :
       - "${INSTANCE_ID}080:8080"
