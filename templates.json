@@ -41,8 +41,8 @@
   },
   {
     "type": 2,
-    "title": "SparkCluster 2.4.3 - Zeppelin 0.8.2 - Python 3.6 - TF 1.14.0 - xpcore 1.0.2",
-    "description": "Spark 2.4.3 cluster with Zeppelin 0.8.2 (official) with Python 3.6.10",
+    "title": "SparkCluster 2.4.5 - Zeppelin 0.8.2 - Python 3.6 - TF 1.15.2 - xpcore 1.0.3",
+    "description": "Spark 2.4.5 cluster with Zeppelin 0.8.2 (official) with Python 3.6.11",
     "note": "Full description available at: https://confluence.int.net.nokia.com/display/DSXP/App+Template+Versions#AppTemplateVersions-SparkCluster2.4.3-Zeppelin0.8.2-Python3.6-TF1.14.0-xpcore1.0.2",
     "categories": ["serverless"],
     "platform": "linux",
