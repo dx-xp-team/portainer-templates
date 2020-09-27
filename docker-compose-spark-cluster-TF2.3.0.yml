@@ -86,4 +86,3 @@ services:
           memory: 8G
       placement:
         constraints: ["node.hostname == slave-${INSTANCE_ID}"]
-© 2020 GitHub, Inc.
