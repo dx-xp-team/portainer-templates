@@ -2,7 +2,7 @@ version: "3"
 services:
 
   spark-master:
-    image: ana-docker-candidates.repo.lab.pl.alcatel-lucent.com/xp-spark:latest
+    image: ana-docker-releases.repo.lab.pl.alcatel-lucent.com/xp-spark:tf2.3.0-xpcore1.1.1
     hostname: spark-master
     command: /opt/spark/bin/spark-class org.apache.spark.deploy.master.Master -h spark-master
     environment:
@@ -31,7 +31,7 @@ services:
           - node.hostname != slave-11          
 
   spark-worker:
-    image: ana-docker-candidates.repo.lab.pl.alcatel-lucent.com/xp-spark:latest
+    image: ana-docker-releases.repo.lab.pl.alcatel-lucent.com/xp-spark:tf2.3.0-xpcore1.1.1
     hostname: spark-worker
     command: /opt/spark/bin/spark-class org.apache.spark.deploy.worker.Worker spark://spark-master:7077
     environment:
@@ -64,7 +64,7 @@ services:
       - /mnt/data:/mnt/data
 
   zeppelin:
-    image: ana-docker-candidates.repo.lab.pl.alcatel-lucent.com/xp-zeppelin:latest
+    image: ana-docker-releases.repo.lab.pl.alcatel-lucent.com/xp-zeppelin:tf2.3.0-xpcore1.1.1
     hostname: zeppelin
     ports :
       - ${INSTANCE_ID}080:8080
