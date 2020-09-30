@@ -137,7 +137,7 @@
    ],
     "repository": {
       "url": "https://github.com/dx-xp-team/portainer-templates",
-      "stackfile": "docker-compose-spark-cluster-TF2.3.0.yml"
+      "stackfile": "docker-compose-spark-2.4.5-cluster-0.8-2.3p3.6.12-tf2.3.0.yml"
     }
   }  
 ]
