@@ -81,8 +81,8 @@
   },
   {
     "type": 2,
-    "title": "Spark Cluster dedicated for SELT",
-    "description": "Spark 2.4 cluster with Zeppelin 0.8.2 (official) with Python 3.6",
+    "title": "Spark Cluster dedicated for SELT - TF 2.3.0 - xpcore 1.1.1",
+    "description": "Spark 2.4 cluster with Zeppelin 0.8.2 (official) with Python 3.6.12 and Tensorflow 2.3.0",
     "note": "Deploys a Spark cluster running Spark 2.4.3 with Python 3.6.6, Tensorflow 1.14.0 and Keras enabled together with Zeppelin 0.8 (snapshot) configured with Nokia CSL authentication.",
     "categories": ["serverless"],
     "platform": "linux",
