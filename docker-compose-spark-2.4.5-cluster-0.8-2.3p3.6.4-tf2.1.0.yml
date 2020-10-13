@@ -59,7 +59,7 @@ services:
     environment:
       - SPARK_HOME=/opt/spark
       - MASTER=spark://spark-master:7077
-      - ZEPPELIN_JAVA_OPTS=-Dspark.executor.memory=20g
+      - ZEPPELIN_JAVA_OPTS=-Dspark.executor.memory=19g
       - ZEPPELIN_NOTEBOOK_DIR=/opt/NotebookRepo
       - HTTP_PROXY=http://135.245.48.34:8000
       - HTTPS_PROXY=https://135.245.48.34:8000
