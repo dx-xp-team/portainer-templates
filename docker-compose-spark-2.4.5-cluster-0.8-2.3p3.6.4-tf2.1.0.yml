@@ -24,7 +24,7 @@ services:
     command: /opt/spark/bin/spark-class org.apache.spark.deploy.worker.Worker spark://spark-master:7077
     environment:
       SPARK_WORKER_CORES: 8
-      SPARK_WORKER_MEMORY: 20g
+      SPARK_WORKER_MEMORY: 19g
       PYTHONPATH: /mnt/data/shared/lib
       TZ: Europe/Brussels
       MLFLOW_TRACKING_URI: file:/mnt/data/shared/mlruns/instance_id/${INSTANCE_ID}
