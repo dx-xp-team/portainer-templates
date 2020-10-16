@@ -1,0 +1,100 @@
+version: "3"
+services:
+
+  spark-master:
+    image: ana-docker-releases.repo.lab.pl.alcatel-lucent.com/xp-spark:tf2.1.1-xpcore1.1.1
+    hostname: spark-master
+    command: /opt/spark/bin/spark-class org.apache.spark.deploy.master.Master -h spark-master
+    environment:
+      TZ: Europe/Brussels
+    ports:
+      - ${INSTANCE_ID}081:8080
+    deploy:
+      resources:
+        limits:
+          memory: 1G
+        reservations:
+          memory: 1G
+      placement:
+        constraints:
+          - node.role != manager
+          - node.hostname != slave-1
+          - node.hostname != slave-2
+          - node.hostname != slave-3
+          - node.hostname != slave-4
+          - node.hostname != slave-5
+          - node.hostname != slave-6
+          - node.hostname != slave-7
+          - node.hostname != slave-8
+          - node.hostname != slave-9
+          - node.hostname != slave-10
+          - node.hostname != slave-11          
+
+  spark-worker:
+    image: ana-docker-releases.repo.lab.pl.alcatel-lucent.com/xp-spark:tf2.1.1-xpcore1.1.1
+    hostname: spark-worker
+    command: /opt/spark/bin/spark-class org.apache.spark.deploy.worker.Worker spark://spark-master:7077
+    environment:
+      SPARK_WORKER_CORES: 4
+      SPARK_WORKER_MEMORY: 19g
+      PYTHONPATH: /mnt/data/shared/lib
+      TZ: Europe/Brussels
+    deploy:
+      replicas: 1
+      resources:
+        limits:
+          memory: 20g
+        reservations:
+          memory: 20g
+      placement:
+        constraints:
+          - node.role != manager
+          - node.hostname != slave-1
+          - node.hostname != slave-2
+          - node.hostname != slave-3
+          - node.hostname != slave-4
+          - node.hostname != slave-5
+          - node.hostname != slave-6
+          - node.hostname != slave-7
+          - node.hostname != slave-8
+          - node.hostname != slave-9
+          - node.hostname != slave-10
+          - node.hostname != slave-11
+    volumes:
+      - /mnt/data:/mnt/data
+
+  zeppelin:
+    image: ana-docker-candidates.repo.lab.pl.alcatel-lucent.com/xp-zeppelin:master-202010130836
+    hostname: zeppelin
+    ports :
+      - ${INSTANCE_ID}080:8080
+      - ${INSTANCE_ID}006:6006
+    environment:
+      - SPARK_HOME=/opt/spark
+      - MASTER=spark://spark-master:7077
+      - ZEPPELIN_JAVA_OPTS=-Dspark.executor.memory=19g
+      - ZEPPELIN_NOTEBOOK_DIR=/opt/NotebookRepo
+      - HTTP_PROXY=http://135.245.48.34:8000
+      - HTTPS_PROXY=https://135.245.48.34:8000
+      - http_proxy=http://135.245.48.34:8000
+      - https_proxy=https://135.245.48.34:8000
+      - PYTHONPATH=/mnt/data/shared/lib:/
+      - TZ=Europe/Brussels
+      - ZEPPELIN_MEM=-Xmx8192m -XX:MaxPermSize=1024m
+      - MLFLOW_TRACKING_URI=file:./logs/mlruns
+    command: /opt/zeppelin/bin/zeppelin.sh
+    volumes:
+      - /mnt/data:/mnt/data
+      - /mnt/NotebookRepo:/opt/NotebookRepo
+      - /mnt/zeppelinConfig/shiro.ini:/opt/zeppelin/conf/shiro.ini
+      - /mnt/zeppelinConfig/notebook-authorization.json:/opt/zeppelin/conf/notebook-authorization.json
+      - /mnt/data/shared/mlruns/instance_id/${INSTANCE_ID}:/opt/zeppelin/logs/mlruns
+      - /mnt/zeppelinConfig/zeppelin-env.sh:/opt/zeppelin/conf/zeppelin-env.sh
+    deploy:
+      resources:
+        limits:
+          memory: 16G
+        reservations:
+          memory: 8G
+      placement:
+        constraints: ["node.hostname == slave-${INSTANCE_ID}"]
