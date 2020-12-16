@@ -62,8 +62,8 @@
   ,
   {
     "type": 2,
-    "title": "Spark Cluster dedicated for SELT - TF 2.1.1 - xpcore 1.1.1",
-    "description": "Spark 2.4.7 cluster with Zeppelin 0.8.2 (official) with Python 3.6.12 and Tensorflow 2.1.1",
+    "title": "Spark Cluster dedicated for SELT - TF 2.4.0 - xpcore 1.1.2",
+    "description": "Spark 2.4.7 cluster with Zeppelin 0.8.2 (official) with Python 3.6.12 and Tensorflow 2.4.0",
     "note": "Deploys a Spark cluster running Spark 2.4.7 with Python 3.6.12, Tensorflow 2.1.1 and Keras enabled together with Zeppelin 0.8.2 (snapshot) configured with Nokia CSL authentication.",
     "categories": ["serverless"],
     "platform": "linux",
@@ -77,7 +77,7 @@
    ],
     "repository": {
       "url": "https://github.com/dx-xp-team/portainer-templates",
-      "stackfile": "compose-SELT-spark2.4.7-tf2.1.1.yml"
+      "stackfile": "compose-SELT-spark2.4.7-tf2.4.0-xpcore1.1.2.ym"
     }
   }
   ,
