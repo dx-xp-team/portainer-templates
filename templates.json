@@ -77,7 +77,7 @@
    ],
     "repository": {
       "url": "https://github.com/dx-xp-team/portainer-templates",
-      "stackfile": "compose-SELT-spark2.4.7-tf2.4.0-xpcore1.1.2.ym"
+      "stackfile": "compose-SELT-spark2.4.7-tf2.4.0-xpcore1.1.2.yml"
     }
   }
   ,
