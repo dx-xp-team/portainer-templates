@@ -50,6 +50,7 @@ services:
     environment:
       - SPARK_HOME=/opt/spark
       - ZEPPELIN_JAVA_OPTS=-Dspark.master=spark://spark-master:7077 -Dspark.executor.memory=155g -Dspark.executor.cores=16 -Dspark.app.name=Zeppelin
+      - ZEPPELIN_SPARK_UI_HIDDEN=true
       - ZEPPELIN_NOTEBOOK_DIR=/opt/NotebookRepo
       - PYTHONPATH=/mnt/data/shared/lib:/
       - TZ=Europe/Brussels
