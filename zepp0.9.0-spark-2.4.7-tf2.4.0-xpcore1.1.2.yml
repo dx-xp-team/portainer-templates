@@ -23,7 +23,7 @@ services:
     hostname: spark-worker
     command: /opt/spark/bin/spark-class org.apache.spark.deploy.worker.Worker spark://spark-master:7077
     environment:
-      SPARK_WORKER_CORES: 16
+      SPARK_WORKER_CORES: 24
       SPARK_WORKER_MEMORY: 155g
       PYTHONPATH: /mnt/data/shared/lib
       TZ: Europe/Brussels
