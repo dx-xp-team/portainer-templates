@@ -33,7 +33,7 @@ services:
         limits:
           memory: 155G
         reservations:
-          memory: 155G
+          memory: 150G
       placement:
         constraints:
           - node.role == worker
