@@ -24,16 +24,16 @@ services:
     command: /opt/spark/bin/spark-class org.apache.spark.deploy.worker.Worker spark://spark-master:7077
     environment:
       SPARK_WORKER_CORES: 24
-      SPARK_WORKER_MEMORY: 155g
+      SPARK_WORKER_MEMORY: 155G
       PYTHONPATH: /mnt/data/shared/lib
       TZ: Europe/Brussels
     deploy:
       replicas: 1
       resources:
         limits:
-          memory: 155g
+          memory: 155G
         reservations:
-          memory: 155g
+          memory: 155G
       placement:
         constraints:
           - node.role == worker
