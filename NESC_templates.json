@@ -38,7 +38,7 @@
    ],
     "repository": {
       "url": "https://github.com/dx-xp-team/portainer-templates",
-      "stackfile": "zepp0.9.0-spark-2.4.7-tf2.4.0-xpcore1.1.2.yml"
+      "stackfile": "zepp0.10.0-spark-2.4.7-tf2.4.0-xpcore1.1.2.yml"
     }
   }  
 ]
