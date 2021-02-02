@@ -41,7 +41,7 @@ services:
       - /mnt/data:/mnt/data
 
   zeppelin:
-    image: 192.168.0.11:5000/apache_zeppelin_snapshot:0.9.0
+    image: 192.168.0.11:5000/apache_zeppelin_snapshot:0.10.0
     hostname: zeppelin
     ports :
       - "${INSTANCE_ID}080:8080"
