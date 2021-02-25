@@ -1,0 +1,70 @@
+version: "3"
+services:
+
+  spark-master:
+    image: 192.168.0.11:5000/apache_spark:2.4.7
+    hostname: spark-master
+    command: /opt/spark/bin/spark-class org.apache.spark.deploy.master.Master -h spark-master
+    environment:
+      TZ: Europe/Brussels
+    ports:
+      - ${INSTANCE_ID}081:8080
+    deploy:
+      resources:
+        limits:
+          memory: 1G
+        reservations:
+          memory: 1G
+      placement:
+        constraints: ["node.role == manager"]
+
+  spark-worker:
+    image: 192.168.0.11:5000/apache_spark:2.4.7
+    hostname: spark-worker
+    command: /opt/spark/bin/spark-class org.apache.spark.deploy.worker.Worker spark://spark-master:7077
+    environment:
+      SPARK_WORKER_CORES: 24
+      SPARK_WORKER_MEMORY: 155G
+      PYTHONPATH: /mnt/data/shared/lib
+      TZ: Europe/Brussels
+    deploy:
+      replicas: 1
+      resources:
+        limits:
+          memory: 40G
+        reservations:
+          memory: 40G
+      placement:
+        constraints:
+          - node.hostname = slave-11
+    volumes:
+      - /mnt/data:/mnt/data
+
+  zeppelin:
+    image: 192.168.0.11:5000/apache_zeppelin_snapshot:0.10.0
+    hostname: zeppelin
+    ports :
+      - "${INSTANCE_ID}080:8080"
+      - "${INSTANCE_ID}082:5000"
+      - "${INSTANCE_ID}006:6006"
+    environment:
+      - SPARK_HOME=/opt/spark
+      - ZEPPELIN_JAVA_OPTS=-Dspark.master=spark://spark-master:7077 -Dspark.executor.memory=155g -Dspark.executor.cores=24 -Dspark.app.name=Zeppelin -Dzeppelin.spark.ui.hidden=true
+      - ZEPPELIN_NOTEBOOK_DIR=/opt/NotebookRepo
+      - PYTHONPATH=/mnt/data/shared/lib:/
+      - TZ=Europe/Brussels
+    command: /opt/zeppelin/bin/zeppelin.sh
+    working_dir: /opt/zeppelin
+    volumes:
+      - /mnt/data:/mnt/data
+      - /mnt/ZeppelinNotebookRepo:/opt/NotebookRepo
+      - /mnt/zeppelinConfig/shiro.ini:/opt/zeppelin/conf/shiro.ini
+      - /mnt/zeppelinConfig/zeppelin-env.sh:/opt/zeppelin/conf/zeppelin-env.sh
+    deploy:
+      resources:
+        limits:
+          memory: 8G
+        reservations:
+          memory: 8G
+      placement:
+        constraints: ["node.role == manager"]
