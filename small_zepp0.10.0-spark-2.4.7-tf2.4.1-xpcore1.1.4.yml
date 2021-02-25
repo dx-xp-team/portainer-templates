@@ -36,7 +36,7 @@ services:
           memory: 40G
       placement:
         constraints:
-          - node.hostname = slave-11
+          - node.hostname == slave-11
     volumes:
       - /mnt/data:/mnt/data
 
