@@ -23,9 +23,9 @@
   },
   {
     "type": 2,
-    "title": "SparkCluster 3.0.2 - Zeppelin 0.10.0_snapshot - Python 3.7.10 - TF 2.4.1 - xpcore 1.1.4",
-    "description": "Spark 3.0.2 cluster with Zeppelin 0.10.0 (snapshot) with Python 3.6.12 and Tensorflow 2.4.1",
-    "note": "Deploys a Spark cluster running Spark 2.4.7 with Python 3.6.12, Tensorflow 2.4.0 and Keras enabled together with Zeppelin 0.10.0 (snapshot) configured with Nokia CSL authentication.",
+    "title": "SparkCluster 2.4.7 - Zeppelin 0.10.0_snapshot - Python 3.7.10 - TF 2.4.1 - xpcore 1.1.4",
+    "description": "Spark 2.4.7 cluster with Zeppelin 0.10.0 (snapshot) with Python 3.7.10 and Tensorflow 2.4.1",
+    "note": "Deploys a Spark cluster running Spark 2.4.7 with Python 3.7.10, Tensorflow 2.4.1 and Keras enabled together with Zeppelin 0.10.0 (snapshot) configured with Nokia CSL authentication.",
     "categories": ["serverless"],
     "platform": "linux",
     "logo": "https://github.com/dx-xp-team/portainer-templates/raw/master/XpClusterZep0.8.png",
@@ -38,7 +38,7 @@
    ],
     "repository": {
       "url": "https://github.com/dx-xp-team/portainer-templates",
-      "stackfile": "zepp0.10.0-spark-3.0.2-tf2.4.1-xpcore1.1.4.yml"
+      "stackfile": "zepp0.10.0-spark-2.4.7-tf2.4.0-xpcore1.1.2.yml"
     }
   }  
 ]
