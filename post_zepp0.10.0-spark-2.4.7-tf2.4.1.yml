@@ -24,19 +24,19 @@ services:
     command: /opt/spark/bin/spark-class org.apache.spark.deploy.worker.Worker spark://spark-master:7077
     environment:
       SPARK_WORKER_CORES: 16
-      SPARK_WORKER_MEMORY: 40G
+      SPARK_WORKER_MEMORY: 155G
       PYTHONPATH: /mnt/data/operator/ptlux/script/xpcore_local
       TZ: Europe/Brussels
     deploy:
       replicas: 1
       resources:
         limits:
-          memory: 40G
+          memory: 155G
         reservations:
-          memory: 40G
+          memory: 155G
       placement:
         constraints:
-          - node.hostname == slave-11
+          - node.role == slave
     volumes:
       - /mnt/data:/mnt/data
 
@@ -49,7 +49,7 @@ services:
       - "${INSTANCE_ID}006:6006"
     environment:
       - SPARK_HOME=/opt/spark
-      - ZEPPELIN_JAVA_OPTS=-Dspark.master=spark://spark-master:7077 -Dspark.executor.memory=40g -Dspark.executor.cores=16 -Dspark.app.name=Zeppelin -Dzeppelin.spark.ui.hidden=true
+      - ZEPPELIN_JAVA_OPTS=-Dspark.master=spark://spark-master:7077 -Dspark.executor.memory=155g -Dspark.executor.cores=16 -Dspark.app.name=Zeppelin -Dzeppelin.spark.ui.hidden=true
       - ZEPPELIN_NOTEBOOK_DIR=/opt/NotebookRepo
       - PYTHONPATH=/mnt/data/operator/ptlux/script/xpcore_local:/
       - TZ=Europe/Brussels
