@@ -24,7 +24,7 @@
   {
     "type": 2,
     "title": "Small SparkCluster 2.4.7 - Zeppelin 0.10.0_snapshot - Python 3.7.10 - TF 2.4.1 - xpcore 1.1.4",
-    "description": "40Gb/ per worker stack with Spark 2.4.7 cluster with Zeppelin 0.10.0 (snapshot) with Python 3.7.10 and Tensorflow 2.4.1",
+    "description": "40Gb per worker stack with Spark 2.4.7 cluster with Zeppelin 0.10.0 (snapshot) with Python 3.7.10 and Tensorflow 2.4.1",
     "note": "Deploys a Spark cluster running Spark 2.4.7 with Python 3.7.10, Tensorflow 2.4.1 and Keras enabled together with Zeppelin 0.10.0 (snapshot) configured with Nokia CSL authentication.",
     "categories": ["serverless"],
     "platform": "linux",
