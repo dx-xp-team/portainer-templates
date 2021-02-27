@@ -23,7 +23,7 @@ services:
     hostname: spark-worker
     command: /opt/spark/bin/spark-class org.apache.spark.deploy.worker.Worker spark://spark-master:7077
     environment:
-      SPARK_WORKER_CORES: 16
+      SPARK_WORKER_CORES: 24
       SPARK_WORKER_MEMORY: 155G
       PYTHONPATH: /mnt/data/operator/ptlux/script/xpcore_local
       TZ: Europe/Brussels
@@ -49,7 +49,7 @@ services:
       - "${INSTANCE_ID}006:6006"
     environment:
       - SPARK_HOME=/opt/spark
-      - ZEPPELIN_JAVA_OPTS=-Dspark.master=spark://spark-master:7077 -Dspark.executor.memory=155g -Dspark.executor.cores=16 -Dspark.app.name=Zeppelin -Dzeppelin.spark.ui.hidden=true
+      - ZEPPELIN_JAVA_OPTS=-Dspark.master=spark://spark-master:7077 -Dspark.executor.memory=155g -Dspark.executor.cores=24 -Dspark.app.name=Zeppelin -Dzeppelin.spark.ui.hidden=true
       - ZEPPELIN_NOTEBOOK_DIR=/opt/NotebookRepo
       - PYTHONPATH=/mnt/data/operator/ptlux/script/xpcore_local:/
       - TZ=Europe/Brussels
