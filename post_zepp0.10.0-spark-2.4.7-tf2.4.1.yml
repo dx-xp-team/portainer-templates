@@ -25,7 +25,7 @@ services:
     environment:
       SPARK_WORKER_CORES: 16
       SPARK_WORKER_MEMORY: 40G
-      PYTHONPATH: /mnt/data/shared/lib
+      PYTHONPATH: /mnt/data/operator/ptlux/script/xpcore_local
       TZ: Europe/Brussels
     deploy:
       replicas: 1
@@ -51,7 +51,7 @@ services:
       - SPARK_HOME=/opt/spark
       - ZEPPELIN_JAVA_OPTS=-Dspark.master=spark://spark-master:7077 -Dspark.executor.memory=40g -Dspark.executor.cores=16 -Dspark.app.name=Zeppelin -Dzeppelin.spark.ui.hidden=true
       - ZEPPELIN_NOTEBOOK_DIR=/opt/NotebookRepo
-      - PYTHONPATH=/mnt/data/avan/xpcore/src:/
+      - PYTHONPATH=/mnt/data/operator/ptlux/script/xpcore_local:/
       - TZ=Europe/Brussels
     command: /opt/zeppelin/bin/zeppelin.sh
     working_dir: /opt/zeppelin
