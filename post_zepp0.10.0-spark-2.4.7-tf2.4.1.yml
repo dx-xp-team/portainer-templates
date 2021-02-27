@@ -36,7 +36,7 @@ services:
           memory: 155G
       placement:
         constraints:
-          - node.role == slave
+          - node.role == worker
     volumes:
       - /mnt/data:/mnt/data
 
