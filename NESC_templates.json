@@ -48,7 +48,7 @@
     "note": "Deploys a Spark cluster running Spark 2.4.7 with Python 3.7.10, Tensorflow 2.4.1 and Keras enabled together with Zeppelin 0.10.0 (snapshot) configured with Nokia CSL authentication.",
     "categories": ["serverless"],
     "platform": "linux",
-    "logo": "https://github.com/dx-xp-team/portainer-templates/raw/master/XpClusterZep0.8.png",
+    "logo": "https://github.com/dx-xp-team/portainer-templates/raw/master/SparkZepp.png",
     "env": [
     {
       "name": "INSTANCE_ID",
@@ -68,7 +68,7 @@
     "note": "Deploys a Spark cluster running Spark 2.4.7 with Python 3.7.10, Tensorflow 2.4.1 tensorflow-probability 0.12.1 and Keras enabled together with Zeppelin 0.10.0 (snapshot) configured with Nokia CSL authentication.",
     "categories": ["serverless"],
     "platform": "linux",
-    "logo": "https://github.com/dx-xp-team/portainer-templates/raw/master/XpClusterZep0.8.png",
+    "logo": "https://github.com/dx-xp-team/portainer-templates/raw/master/SparkZepp.png",
     "env": [
     {
       "name": "INSTANCE_ID",
@@ -88,7 +88,7 @@
     "note": "Deploys a Spark cluster running Spark 3.0.2 with Python 3.7.10, Tensorflow 2.4.1 and Keras enabled together with Zeppelin 0.10.0 (snapshot) configured with Nokia CSL authentication.",
     "categories": ["serverless"],
     "platform": "linux",
-    "logo": "https://github.com/dx-xp-team/portainer-templates/raw/master/XpClusterZep0.8.png",
+    "logo": "https://github.com/dx-xp-team/portainer-templates/raw/master/SparkZepp.png",
     "env": [
     {
       "name": "INSTANCE_ID",
