@@ -4,7 +4,7 @@ services:
   spark-master:
     image: 192.168.0.11:5000/apache_spark:2.4.7
     hostname: spark-master
-    command: /opt/bin/spark-class org.apache.spark.deploy.master.Master -h spark-master
+    command: /opt/spark/bin/spark-class org.apache.spark.deploy.master.Master -h spark-master
     environment:
       TZ: Europe/Brussels
     ports:
@@ -21,7 +21,7 @@ services:
   spark-worker:
     image: 192.168.0.11:5000/apache_spark:2.4.7
     hostname: spark-worker
-    command: /opt/bin/spark-class org.apache.spark.deploy.worker.Worker spark://spark-master:7077
+    command: /opt/spark/bin/spark-class org.apache.spark.deploy.worker.Worker spark://spark-master:7077
     environment:
       SPARK_WORKER_CORES: 24
       SPARK_WORKER_MEMORY: 155G
