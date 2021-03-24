@@ -38,7 +38,7 @@
   ],
     "repository": {
       "url": "https://github.com/dx-xp-team/portainer-templates",
-      "stackfile": "docker-compose-spark2.3-jupyter-python3.6.4.yml"
+      "stackfile": "docker-compose-spark2.4-jupyter-python3.8.yml"
     }
   },
   {
