@@ -1,0 +1,65 @@
+version: "3"
+services:
+
+  spark-master:
+    image: 192.168.0.11:5000/apache_spark:2.4.7
+    hostname: spark-master
+    command: bin/spark-class org.apache.spark.deploy.master.Master -h spark-master
+    environment:
+      TZ: Europe/Brussels
+    ports:
+      - ${INSTANCE_ID}082:8080
+    deploy:
+      resources:
+        limits:
+          memory: 1G
+        reservations:
+          memory: 1G
+      placement:
+        constraints: ["node.role == manager"]
+
+  spark-worker:
+    image: 192.168.0.11:5000/apache_spark:2.4.7
+    hostname: spark-worker
+    command: bin/spark-class org.apache.spark.deploy.worker.Worker spark://spark-master:7077
+    environment:
+      SPARK_WORKER_CORES: 24
+      SPARK_WORKER_MEMORY: 155G
+      PYTHONPATH: /mnt/data/shared/lib
+      TZ: Europe/Brussels
+    deploy:
+      replicas: 1
+      resources:
+        limits:
+          memory: 155G
+        reservations:
+          memory: 155G
+      placement:
+        constraints:
+          - node.role == worker
+    volumes:
+      - /mnt/data:/mnt/data
+
+  jupyter:
+    image: 192.168.0.11:5000/jupyter:2.4.7
+    hostname: jupyter
+    command: jupyter notebook --debug --no-browser --ip=0.0.0.0 --notebook-dir=/mnt/jupyterNotebookRepo --allow-root
+    ports :
+      - "${INSTANCE_ID}888:8888"
+      - "${INSTANCE_ID}050:5050"
+    environment:
+      SPARK_LOCAL_IP: jupyter
+      PYSPARK_SUBMIT_ARGS: --jars /root/pixiedust/bin/cloudant-spark-v2.0.0-185.jar --driver-class-path /root/pixiedust/data/libs/* --master spark://spark-master:7077 --name "jupyter" --executor-memory 155G pyspark-shell
+      SPARK_DRIVER_MEMORY: 6G
+      TZ: Europe/Brussels
+    volumes:
+      - /mnt/data:/mnt/data
+      - /mnt/jupyterNotebookRepo:/mnt/jupyterNotebookRepo
+    deploy:
+      resources:
+        limits:
+          memory: 8G
+        reservations:
+          memory: 8G
+      placement:
+        constraints: ["node.role == manager"]
