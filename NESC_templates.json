@@ -23,12 +23,12 @@
   },
     {
     "type": 2,
-    "title": "SparkCluster 2.3 - Jupyter 5.4.0 - Python 3.6.4",
-    "description": "Spark 2.3 cluster with Jupyter 5.5.0 Notebook editor for Python 3.6",
-    "note": "Deploys a Spark cluster running Spark 2.3.1 with Python 3.6.5, Tensorflow 1.10.1 and Keras enabled together with Jupyter 5.5.0 and PixieDust 1.1.11",
+    "title": "SparkCluster 2.4.7 - Jupyter 5.4.0 - Python 2.7.16",
+    "description": "Spark 2.4.7 cluster with Jupyter 5.7.8 Notebook editor for Python 2.7",
+    "note": "Deploys a Spark cluster running Spark 2.4.7 with Python 2.7.16, Tensorflow 2.1.0 and Keras enabled together with Jupyter 5.7.8 and PixieDust 1.1.19",
     "categories": ["serverless"],
     "platform": "linux",
-    "logo": "https://github.com/dx-xp-team/portainer-templates/raw/master/XpCluster2.3.png",
+    "logo": "https://github.com/dx-xp-team/portainer-templates/raw/master/SparkJup.png",
     "env": [
     {
       "name": "INSTANCE_ID",
