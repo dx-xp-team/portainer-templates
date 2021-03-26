@@ -49,7 +49,6 @@ services:
       - "${INSTANCE_ID}050:5050"
     environment:
       SPARK_LOCAL_IP: jupyter
-      PYSPARK_SUBMIT_ARGS: --jars /root/pixiedust/bin/cloudant-spark-v2.0.0-185.jar --driver-class-path /root/pixiedust/data/libs/* --master spark://spark-master:7077 --name "jupyter" --executor-memory 155G pyspark-shell
       SPARK_DRIVER_MEMORY: 6G
       TZ: Europe/Brussels
     volumes:
