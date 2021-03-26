@@ -8,7 +8,7 @@ services:
     environment:
       TZ: Europe/Brussels
     ports:
-      - ${INSTANCE_ID}082:8080
+      - ${INSTANCE_ID}081:8080
     deploy:
       resources:
         limits:
@@ -45,7 +45,7 @@ services:
     hostname: jupyter
     command: jupyter notebook --debug --no-browser --ip=0.0.0.0 --notebook-dir=/mnt/jupyterNotebookRepo --allow-root
     ports :
-      - "${INSTANCE_ID}888:8888"
+      - "${INSTANCE_ID}080:8888"
       - "${INSTANCE_ID}050:5050"
     environment:
       SPARK_LOCAL_IP: jupyter
