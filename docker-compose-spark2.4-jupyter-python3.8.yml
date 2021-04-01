@@ -2,7 +2,7 @@ version: "3"
 services:
 
   spark-master:
-    image: 192.168.0.11:5000/apache_spark:3.1.1
+    image: 192.168.0.11:5000/apache_spark:2.4.7
     hostname: spark-master
     command: /opt/spark/bin/spark-class org.apache.spark.deploy.master.Master -h spark-master
     environment:
@@ -19,7 +19,7 @@ services:
         constraints: ["node.role == manager"]
 
   spark-worker:
-    image: 192.168.0.11:5000/apache_spark:3.1.1
+    image: 192.168.0.11:5000/apache_spark:2.4.7
     hostname: spark-worker
     command: /opt/spark/bin/spark-class org.apache.spark.deploy.worker.Worker spark://spark-master:7077
     environment:
