@@ -103,9 +103,9 @@
   },
   {
     "type": 2,
-    "title": "TEST SparkCluster 3.1.2 - Zeppelin 0.10.0_snapshot - Python 3.8.10 - TF 2.4.1 - xpcore 2.2.0",
+    "title": "TEST SparkCluster 3.1.2 - Zeppelin 0.10.0_snapshot - Python 3.7.10 - TF 2.5.0 - xpcore 2.2.1",
     "description": "STACK ONLY FOR TEST don't use it if you don't know why",
-    "note": "Deploys a Spark cluster running Spark 3.1.2 with Python 3.8.10, Tensorflow 2.4.1 and Keras enabled together with Zeppelin 0.10.0 (snapshot) configured with Nokia CSL authentication.",
+    "note": "Deploys a Spark cluster running Spark 3.1.2 with Python 3.7.10, Tensorflow 2.5.0 and Keras enabled together with Zeppelin 0.10.0 (snapshot) configured with Nokia CSL authentication.",
     "categories": ["serverless"],
     "platform": "linux",
     "logo": "https://github.com/dx-xp-team/portainer-templates/raw/master/SparkZepp.png",
