@@ -59,7 +59,7 @@ services:
       - /mnt/data:/mnt/data
       - /mnt/ZeppelinNotebookRepo:/opt/NotebookRepo
       - /mnt/zeppelinConfig/shiro.ini:/opt/zeppelin/conf/shiro.ini
-      - /mnt/zeppelinConfig/zeppelin-env.sh:/opt/zeppelin/conf/zeppelin-env.sh
+      - /mnt/zeppelinConfig/zeppelin-env_scala_2.12.sh:/opt/zeppelin/conf/zeppelin-env.sh
     deploy:
       resources:
         limits:
