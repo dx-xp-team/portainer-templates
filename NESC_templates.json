@@ -83,9 +83,9 @@
   },  
   {
     "type": 2,
-    "title": "SparkCluster 2.4.7 - Zeppelin 0.10.0_snapshot - Python 3.7.10 - TF 2.4.1 - xpcore 3.0.0",
-    "description": "155Gb per worker Stack with Spark 2.4.7 cluster with Zeppelin 0.10.0 (snapshot) with Python 3.7.10 and Tensorflow 2.4.1",
-    "note": "Deploys a Spark cluster running Spark 2.4.7 with Python 3.7.10, Tensorflow 2.4.1 tensorflow-probability 0.12.1 and Keras enabled together with Zeppelin 0.10.0 (snapshot) configured with Nokia CSL authentication.",
+    "title": "SparkCluster 2.4.7 - Zeppelin 0.10.0_snapshot - Python 3.7.13 - TF 2.5.0 - xpcore 3.0.0",
+    "description": "155Gb per worker Stack with Spark 2.4.7 cluster with Zeppelin 0.10.0 (snapshot) with Python 3.7.13 and Tensorflow 2.5.0",
+    "note": "Deploys a Spark cluster running Spark 2.4.7 with Python 3.7.13, Tensorflow 2.5.0 tensorflow-probability 0.12.1 and Keras enabled together with Zeppelin 0.10.0 (snapshot) configured with Nokia CSL authentication.",
     "categories": ["serverless"],
     "platform": "linux",
     "logo": "https://github.com/dx-xp-team/portainer-templates/raw/master/SparkZepp.png",
